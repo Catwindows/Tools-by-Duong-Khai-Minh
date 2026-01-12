@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatWindows</title>
-    <!-- Font Orbitron for high-tech style -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -148,7 +147,7 @@
 
         .tech-btn span { font-size: 1.8rem; margin-bottom: 8px; }
 
-        /* --- TERMINAL --- */
+        /*trang chính*/
         #terminal-overlay {
             display: none;
             position: fixed;
@@ -262,10 +261,10 @@
     </div>
 
     <div id="main-interface">
-        <div class="main-title">CATWINDOWS TOOLS</div>
+        <div class="main-title">CATWINDOWS v3.0</div>
         
         <div class="button-container">
-            <!-- Hàng 1 -->
+           
             <button class="tech-btn" onclick="handleActiveWindows()">
                 <span>⚡</span> ACTIVE WINDOWS
             </button>
@@ -274,22 +273,22 @@
                 <span>🖥️</span> CẤU HÌNH MÁY
             </button>
 
-            <!-- Hàng 2 -->
+            
             <button class="tech-btn warning" onclick="openDeepTest()">
-                <span>🔥</span> TEST MÁY  CHUYÊN SÂU
+                <span>🔥</span> TEST MÁY SÂU
             </button>
 
             <a href="https://trinhanlaptop.vn/tools/" target="_blank" class="tech-btn special">
                 <span>🧪</span> TEST ONLINE
             </a>
 
-            <!-- Hàng 3 -->
+            
             <button class="tech-btn green" onclick="openAppDownloader()">
                 <span>📦</span> TẢI APP & DRIVER
             </button>
 
             <button class="tech-btn" onclick="showInfo()">
-                <span>💎</span> THÔNG TIN NGƯỜI TẠO RA
+                <span>💎</span> THÔNG TIN CỐT LÕI
             </button>
         </div>
     </div>
@@ -297,11 +296,11 @@
     <div id="terminal-overlay">
         <div id="terminal-window">
             <div class="terminal-header">
-                <span id="term-title">SYSTEM_DIAGNOSTIC_v2.5</span>
+                <span id="term-title">SYSTEM_DIAGNOSTIC_v3.0</span>
                 <span style="cursor:pointer" onclick="closeTerminal()">[X] CLOSE</span>
             </div>
             <div class="terminal-body" id="term-body">
-                <!-- Content Injected Here -->
+               
             </div>
             <div class="close-footer">
                 <button class="tech-btn" style="padding: 10px 40px; min-width: auto; display: inline-block;" onclick="closeTerminal()">QUAY LẠI MENU</button>
@@ -350,13 +349,12 @@
             body.innerHTML = `
                 <h2 style="color:var(--neon-pink)">HƯỚNG DẪN ACTIVE WINDOWS/OFFICE</h2>
                 <div style="border: 1px solid var(--neon-pink); padding: 20px; background: rgba(255,0,255,0.05); line-height: 1.6;">
-                    <p>1. Chuột phải vào nút <b style="color:var(--neon-blue)">Start</b> (hình vuông Windows).</p>
+                    <p>1. Chuột phải vào nút <b style="color:var(--neon-blue)">Start</b>.</p>
                     <p>2. Chọn <b style="color:var(--neon-blue)">Terminal (Admin)</b> hoặc <b style="color:var(--neon-blue)">PowerShell (Admin)</b>.</p>
-                    <p>3. <b style="color:var(--neon-yellow)">Chuột phải</b> vào màn hình đen vừa hiện ra để dán lệnh đã copy.</p>
-                    <p>4. Nhấn <b style="color:var(--neon-blue)">Enter</b> và làm theo hướng dẫn trên màn hình đen.</p>
+                    <p>3. <b style="color:var(--neon-yellow)">Chuột phải</b> vào màn hình đen để dán lệnh.</p>
+                    <p>4. Nhấn <b style="color:var(--neon-blue)">Enter</b> và chọn số trên menu MAS.</p>
                     <div class="cmd-line" style="margin-top:20px;" onclick="copy('${cmd}')">${cmd}</div>
                 </div>
-                <p style="color: #888; margin-top: 15px; font-size: 0.8rem;">* Đây là tool Microsoft Activation Scripts (MAS) mã nguồn mở an toàn nhất thế giới.</p>
             `;
             document.getElementById('terminal-overlay').style.display = 'flex';
         }
@@ -368,9 +366,9 @@
             body.innerHTML = `
                 <h2 style="color:var(--neon-blue)">KIỂM TRA DXDIAG</h2>
                 <div style="border: 1px solid var(--neon-blue); padding: 20px; background: rgba(0,0,0,0.5);">
-                    <p>1. Nhấn <b>Windows + R</b> trên bàn phím.</p>
+                    <p>1. Nhấn <b>Windows + R</b>.</p>
                     <p>2. <b style="color:var(--neon-yellow)">Dán lệnh</b> vừa copy vào ô Open.</p>
-                    <p>3. Nhấn <b>Enter</b> và xem các tab System, Display.</p>
+                    <p>3. Nhấn <b>Enter</b>.</p>
                     <div class="cmd-line" style="margin-top:20px;" onclick="copy('dxdiag')">dxdiag</div>
                 </div>
             `;
@@ -381,7 +379,7 @@
             const body = document.getElementById('term-body');
             document.getElementById('term-title').innerText = "DEEP_HARDWARE_TEST_SUITE.sys";
             body.innerHTML = `
-                <h2 style="color:var(--neon-pink); text-align:center;">HỆ THỐNG KIỂM TRA PHẦN CỨNG CHUYÊN SÂU</h2>
+                <h2 style="color:var(--neon-pink); text-align:center;">KIỂM TRA PHẦN CỨNG CHUYÊN SÂU</h2>
                 <div class="test-grid">
                     <div class="test-item">
                         <span class="test-title">1. TEST CPU</span>
@@ -409,19 +407,42 @@
 
         function openAppDownloader() {
             const body = document.getElementById('term-body');
-            document.getElementById('term-title').innerText = "SOFTWARE_DEPLOYMENT_CENTER.sys";
+            document.getElementById('term-title').innerText = "DOWNLOAD_CENTER_V3.sys";
             body.innerHTML = `
-                <h2 style="color:var(--neon-green); text-align:center;">KHO ỨNG DỤNG & DRIVER</h2>
-                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top:20px;">
-                    <a href="https://ninite.com/" target="_blank" class="tech-btn green" style="width: 300px;">
-                        <span>🚀</span>
-                        <strong>NINITE.COM</strong>
-                        <p style="font-size: 0.7rem; margin-top: 10px; color: #ccc;">Tải hàng loạt App cơ bản chỉ với 1 click.</p>
+                <h2 style="color:var(--neon-green); text-align:center;">KHO ỨNG DỤNG & CÔNG CỤ (TÁCH BIỆT)</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top:20px;">
+                    <!-- 1. Bypass iCloud -->
+                    <a href="https://drive.google.com/drive/folders/14eTRLxAH9X4Cyb5pk51ChT0boE-OYvB0?usp=sharing" target="_blank" class="tech-btn special">
+                        <span>🔓</span>
+                        <strong>1. BYPASS ICLOUD</strong>
+                        <p style="font-size: 0.65rem; margin-top: 5px; color: #ccc;">Tools bypass iPhone/iPad (Drive).</p>
                     </a>
-                    <a href="https://www.snappy-driver-installer.org/" target="_blank" class="tech-btn warning" style="width: 300px;">
+                    <a href="https://drive.google.com/drive/folders/1GxtoXvZHak-Weha30NZwVzGaRn6P3HS_?usp=drive_link" target="_blank" class="tech-btn warning">
+                        <span>🛠️</span>
+                        <strong>2. KHO TOOLS (DRIVE)</strong>
+                        <p style="font-size: 0.65rem; margin-top: 5px; color: #ccc;">Làm này nọ & Tinh chỉnh hệ thống.</p>
+                    </a>
+
+                   
+                    <a href="https://trinhanlaptop.vn/tools/" target="_blank" class="tech-btn">
+                        <span>🌐</span>
+                        <strong>3. TRANG TEST MÁY(PHẦN CỨNG)</strong>
+                        <p style="font-size: 0.65rem; margin-top: 5px; color: #ccc;">Web công cụ bản cũ (Ổn định).</p>
+                    </a>
+
+                    
+                    <a href="https://ninite.com/" target="_blank" class="tech-btn green">
+                        <span>🚀</span>
+                        <strong>4. NINITE.COM</strong>
+                        <p style="font-size: 0.65rem; margin-top: 5px; color: #ccc;">Tải App  hàng loạt.</p>
+                    </a>
+
+                    
+                    <a href="https://www.snappy-driver-installer.org/" target="_blank" class="tech-btn" style="border-color: var(--neon-blue); color: var(--neon-blue);">
                         <span>⚙️</span>
-                        <strong>SNAPPY DRIVER</strong>
-                        <p style="font-size: 0.7rem; margin-top: 10px; color: #ccc;">Bộ cài Driver mạnh nhất cho mọi dòng máy.</p>
+                        <strong>5. SNAPPY DRIVER</strong>
+                        <p style="font-size: 0.65rem; margin-top: 5px; color: #ccc;">Bộ cài Driver Offline/Online cực mạnh.</p>
                     </a>
                 </div>
             `;
@@ -433,12 +454,12 @@
             document.getElementById('term-title').innerText = "CORE_IDENT_DATA.bin";
             body.innerHTML = `
                 <div style="text-align:center; padding: 20px;">
-                    <h2 style="color:var(--neon-blue)">IDENTITY: DUONG KHAI MINH</h2>
+                    <h2 style="color:var(--neon-blue)">IDENTITY: OIDOIOI</h2>
                     <div style="border:1px solid var(--neon-pink); padding: 20px; display:inline-block; text-align:left; background:rgba(255,0,255,0.05)">
                         <p><span style="color:var(--neon-blue)">ADMIN:</span> Dương Khải Minh</p>
                         <p><span style="color:var(--neon-blue)">YOUTUBE:</span> CatWindows</p>
                         <p><span style="color:var(--neon-blue)">ZALO:</span> 0941.779.849</p>
-                        <p><span style="color:var(--neon-blue)">STATUS:</span> <span style="color:var(--neon-pink)">THPT CHUYÊN NGUYỄN BỈNH KHIÊM</span></p>
+                        <p><span style="color:var(--neon-blue)">STATUS:</span> <span style="color:var(--neon-pink)">THPT Chuyên Nguyễn Bỉnh Khiêm</span></p>
                     </div>
                 </div>
             `;
